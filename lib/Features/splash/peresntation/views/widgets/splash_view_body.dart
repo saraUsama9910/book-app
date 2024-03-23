@@ -16,10 +16,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(AssetsData.logo),
-        const SizedBox(
-          height: 4,
+        const Text(
+          'Read Free Books',
         ),
-        const Text('Read Free Books'),
       ],
     );
   }
