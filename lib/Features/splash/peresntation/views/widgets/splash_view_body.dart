@@ -1,8 +1,8 @@
+import 'package:book_app/Features/home/peresntation/views/home_view.dart';
 import 'package:book_app/Features/splash/peresntation/views/widgets/sliding_text.dart';
 import 'package:book_app/core/utils/assets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -19,6 +19,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initSlidingAnimation();
+    navigateToHome();
   }
 
   @override
@@ -47,5 +48,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
             .animate(animationController);
     animationController.forward();
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.fade, duration: kThemeAnimationDuration);
+    });
   }
 }
