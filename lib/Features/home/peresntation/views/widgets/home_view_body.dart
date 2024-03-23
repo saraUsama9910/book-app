@@ -8,26 +8,26 @@ class HomeViewBoy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          FeaturedBooksListView(),
-          SizedBox(
-            height: 10,
-            width: 15,
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CustomAppBar(),
+        Padding(
+          padding: EdgeInsets.only(left: 15, bottom: 9),
+          child: FeaturedBooksListView(),
+        ),
+        SizedBox(
+          height: 10,
+          width: 15,
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 20, left: 12, bottom: 30),
+          child: Text(
+            'Best Seller',
+            style: Styles.textStyle20,
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 20, left: 12, bottom: 30),
-            child: Text(
-              'Best Seller',
-              style: Styles.textStyle20,
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 }
