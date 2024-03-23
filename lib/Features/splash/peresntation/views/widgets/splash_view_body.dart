@@ -14,14 +14,12 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(AssetsData.logo),
-        const SizedBox(height: 4),
-        const Text(
-          'Read Free Books',
-          textAlign: TextAlign.center,
-        )
+        const SizedBox(
+          height: 4,
+        ),
+        const Text('Read Free Books'),
       ],
     );
   }

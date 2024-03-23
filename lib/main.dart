@@ -14,7 +14,7 @@ class BookApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(),
-      home: const SplashView(),
+      home:  SplashView(),
     );
   }
 }
