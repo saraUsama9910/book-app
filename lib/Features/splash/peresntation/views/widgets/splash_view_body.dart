@@ -34,9 +34,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(AssetsData.logo),
-        const Text(
-          'Read Free Books',
-        ),
+        slidingText(slidingAnimation: slidingAnimation),
       ],
     );
   }
