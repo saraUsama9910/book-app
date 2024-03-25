@@ -14,7 +14,7 @@ class HomeViewBoy extends StatelessWidget {
       children: [
         CustomAppBar(),
         Padding(
-          padding: EdgeInsets.only(left: 15, bottom: 9),
+          padding: EdgeInsets.only(left: 15, bottom: 9, right: 15),
           child: FeaturedBooksListView(),
         ),
         SizedBox(
@@ -22,7 +22,7 @@ class HomeViewBoy extends StatelessWidget {
           width: 15,
         ),
         Padding(
-          padding: EdgeInsets.only(top: 20, left: 12, bottom: 30),
+          padding: EdgeInsets.only(top: 15, left: 15, bottom: 15),
           child: Text(
             'Best Seller',
             style: Styles.textStyle20,
@@ -39,14 +39,32 @@ class BestSellerListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-            height: 90, width: 90, child: Image.asset(AssetsData.testImage)),
-        const Column(
-          children: [],
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(left: 15),
+      child: SizedBox(
+        height: 125,
+        child: Row(
+          children: [
+            AspectRatio(
+              aspectRatio: 2.5 / 4,
+              child: Container(
+                // height: MediaQuery.of(context).size.height * .3,
+                // width: 120,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  image: const DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage(AssetsData.testImage),
+                  ),
+                ),
+              ),
+            ),
+            const Column(
+              children: [],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
