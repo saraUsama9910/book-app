@@ -21,7 +21,7 @@ class HomeViewBoy extends StatelessWidget {
           height: 10,
           width: 15,
         ),
-        Padding(
+       Padding(
           padding: EdgeInsets.only(top: 15, left: 15, bottom: 15),
           child: Text(
             'Best Seller',
