@@ -21,7 +21,7 @@ class HomeViewBoy extends StatelessWidget {
           height: 10,
           width: 15,
         ),
-       Padding(
+        Padding(
           padding: EdgeInsets.only(top: 15, left: 15, bottom: 15),
           child: Text(
             'Best Seller',
@@ -59,8 +59,21 @@ class BestSellerListViewItem extends StatelessWidget {
                 ),
               ),
             ),
-            const Column(
-              children: [],
+            const SizedBox(
+              width: 20,
+            ),
+            Column(
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: const Text(
+                    'Harry Potter and The Goblet Of Fire',
+                    style: Styles.textStyle20,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                )
+              ],
             )
           ],
         ),
