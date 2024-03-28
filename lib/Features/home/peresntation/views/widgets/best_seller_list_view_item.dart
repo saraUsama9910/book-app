@@ -1,6 +1,4 @@
-import 'dart:html';
-import 'dart:ui';
-
+import 'package:book_app/Features/home/peresntation/views/widgets/book_rating.dart';
 import 'package:book_app/constants.dart';
 import 'package:book_app/core/utils/assets.dart';
 import 'package:book_app/core/utils/styles.dart';
@@ -34,40 +32,44 @@ class BestSellerListViewItem extends StatelessWidget {
             const SizedBox(
               width: 20,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * .5,
-                  child: Text(
-                    'Harry Potter and The Goblet Of Fire',
-                    style:
-                        Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                const Text(
-                  'J.K. Rowlling',
-                  style: Styles.textStyle14,
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      '19.99 €',
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * .5,
+                    child: Text(
+                      'Harry Potter and The Goblet Of Fire',
                       style: Styles.textStyle20
-                          .copyWith(fontWeight: FontWeight.bold),
-                    )
-                  ],
-                )
-              ],
-            )
+                          .copyWith(fontFamily: kGtSectraFine),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  const Text(
+                    'J.K. Rowlling',
+                    style: Styles.textStyle14,
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        '19.99 €',
+                        style: Styles.textStyle20
+                            .copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      const Spacer(),
+                      const BookRating(),
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
