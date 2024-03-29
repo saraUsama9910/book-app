@@ -28,9 +28,24 @@ class HomeViewBoy extends StatelessWidget {
             style: Styles.textStyle18,
           ),
         ),
-        BestSellerListViewItem(),
+        BestSellerListView(),
       ],
     );
   }
 }
 
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return const BestSellerListViewItem();
+        },
+      ),
+    );
+  }
+}
