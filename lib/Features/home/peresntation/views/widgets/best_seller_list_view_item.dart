@@ -18,8 +18,6 @@ class BestSellerListViewItem extends StatelessWidget {
             AspectRatio(
               aspectRatio: 2.5 / 4,
               child: Container(
-                // height: MediaQuery.of(context).size.height * .3,
-                // width: 120,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
                   image: const DecorationImage(
@@ -37,7 +35,7 @@ class BestSellerListViewItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * .5,
+                    width: MediaQuery.of(context).size.width * .7,
                     child: Text(
                       'Harry Potter and The Goblet Of Fire',
                       style: Styles.textStyle20
@@ -60,7 +58,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     children: [
                       Text(
                         '19.99 €',
-                        style: Styles.textStyle20
+                        style: Styles.textStyle18
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
