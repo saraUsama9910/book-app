@@ -1,5 +1,6 @@
 import 'package:book_app/Features/splash/peresntation/views/splash_view.dart';
 import 'package:book_app/constants.dart';
+import 'package:book_app/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,7 +14,7 @@ class BookApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerConfig: _router,
+      routerConfig:AppRouter.router,
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: kPrimaryColor,
