@@ -4,7 +4,6 @@ class BookEntity {
   final String authorName;
   final num price;
   final num rating;
-
   BookEntity(
       {required this.image,
       required this.title,
