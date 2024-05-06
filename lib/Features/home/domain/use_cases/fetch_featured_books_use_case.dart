@@ -11,3 +11,4 @@ class FetchFeaturedBooksUseCase {
     return homeRepo.fetchFeaturedBooks();
   }
 }
+ 
