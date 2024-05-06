@@ -6,8 +6,8 @@ import 'package:dartz/dartz.dart';
 class FetchFeaturedBooksUseCase {
   final HomeRepo homeRepo;
 
-  FetchFeaturedBooksUseCase({required this.homeRepo});
-  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() {
+  FetchFeaturedBooksUseCase( this.homeRepo);
+  Future<Either<Failure, List<BookEntity>>> call() {
     return homeRepo.fetchFeaturedBooks();
   }
 }
