@@ -5,20 +5,21 @@ import 'package:book_app/Features/home/domain/repos/home_repo.dart';
 import 'package:book_app/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
 
-class HomeRepoImp extends HomeRepo {
+class HomeRepoImpl extends HomeRepo {
   final HomeLocalDataSource homeLocalDataSource;
   final HomeRepoDataSource homeRepoDataSource;
 
-  HomeRepoImp(
+  HomeRepoImpl(
       {required this.homeLocalDataSource, required this.homeRepoDataSource});
   @override
   Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() async {
     try {
-      var booksList = homeLocalDataSource.featchFeaturedBooks();
-      if (booksList.isNotEmpty) {
-        return right(booksList);
+      var books;
+       books = homeLocalDataSource.featchFeaturedBooks();
+      if (books.isNotEmpty) {
+        return right(books);
       }
-      var books = await homeRepoDataSource.featchFeaturedBooks();
+       books = await homeRepoDataSource.featchFeaturedBooks();
       return right(books);
     } on Exception catch (e) {
       return left(
@@ -28,13 +29,14 @@ class HomeRepoImp extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() async{
+  Future<Either<Failure, List<BookEntity>>> fetchNewestBooks() async {
     try {
-      var booksList = homeLocalDataSource.featchNewestBooks();
-      if (booksList.isNotEmpty) {
-        return right(booksList);
+      var books;
+      books = homeLocalDataSource.featchNewestBooks();
+      if (books.isNotEmpty) {
+        return right(books);
       }
-      var books = await homeRepoDataSource.featchNewestBooks();
+      books = await homeRepoDataSource.featchNewestBooks();
       return right(books);
     } on Exception catch (e) {
       return left(
