@@ -1,6 +1,8 @@
 import 'package:book_app/Features/home/data/models/book_model/book_model.dart';
 import 'package:book_app/Features/home/domain/entities/book_entity.dart';
+import 'package:book_app/constants.dart';
 import 'package:book_app/core/utils/api_service.dart';
+import 'package:book_app/core/utils/fucnctions/save_books.dart';
 
 abstract class HomeRepoDataSource {
   Future<List<BookEntity>> featchFeaturedBooks();
@@ -16,6 +18,7 @@ class HomeRepoDataSourceImp extends HomeRepoDataSource {
     var data = await apiService.get(
         endPoint: 'volumes?Filtering=free-ebooks&q=programming');
     List<BookEntity> books = getBooksList(data);
+    SaveBooksData(books, kFeaturedBox);
     return books;
   }
 
