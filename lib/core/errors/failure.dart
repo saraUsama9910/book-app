@@ -1,9 +1,6 @@
-class Failure{
+abstract class Failure{
 
 }
-class NewWorkFailure{
-
-}
-class ChacheFailure{
+class ServerFailure extends Failure{
 
 }
