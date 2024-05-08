@@ -4,6 +4,7 @@ import 'package:book_app/Features/home/domain/entities/book_entity.dart';
 import 'package:book_app/Features/home/domain/repos/home_repo.dart';
 import 'package:book_app/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl extends HomeRepo {
   final HomeLocalDataSource homeLocalDataSource;
@@ -22,9 +23,11 @@ class HomeRepoImpl extends HomeRepo {
       books = await homeRepoDataSource.featchFeaturedBooks();
       return right(books);
     } on Exception catch (e) {
-      return left(
-        ServerFailure(),
-      );
+      if (e is DioException) {
+  return left(
+    ServerFailure.fromDioError(),
+  );
+}
     }
   }
 
@@ -39,9 +42,11 @@ class HomeRepoImpl extends HomeRepo {
       books = await homeRepoDataSource.featchNewestBooks();
       return right(books);
     } on Exception catch (e) {
-      return left(
-        ServerFailure(),
-      );
+    
+  return left(
+    ServerFailure(e.toString()),
+  );
+
     }
   }
 }
