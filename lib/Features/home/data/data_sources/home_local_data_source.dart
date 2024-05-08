@@ -4,3 +4,16 @@ abstract class HomeLocalDataSource {
   List<BookEntity> featchFeaturedBooks();
   List<BookEntity> featchNewestBooks();
 }
+class HomeLocalDataSourceImp extends HomeLocalDataSource{
+  @override
+  List<BookEntity> featchFeaturedBooks() {
+    // TODO: implement featchFeaturedBooks
+    throw UnimplementedError();
+  }
+
+  @override
+  List<BookEntity> featchNewestBooks() {
+    // TODO: implement featchNewestBooks
+    throw UnimplementedError();
+  }
+}
