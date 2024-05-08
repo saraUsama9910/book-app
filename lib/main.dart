@@ -10,7 +10,8 @@ void main() async {
   runApp(const BookApp());
  await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
-  await Hive.openBox(kFeaturedBox);
+  await Hive.openBox<BookEntity>(kFeaturedBox);
+  await Hive.openBox<BookEntity>(kNewestBox);
 }
 
 class BookApp extends StatelessWidget {
