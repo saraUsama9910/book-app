@@ -48,8 +48,16 @@ class HomeRepoImpl extends HomeRepo {
       books = await homeRepoDataSource.featchNewestBooks();
       return right(books);
     } on Exception catch (e) {
+      if (e is DioException) {
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      }
+
       return left(
-        ServerFailure(e.toString()),
+        ServerFailure(
+          e.toString(),
+        ),
       );
     }
   }
