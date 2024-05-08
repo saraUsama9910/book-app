@@ -1,3 +1,4 @@
+import 'package:book_app/Features/home/domain/entities/book_entity.dart';
 import 'package:equatable/equatable.dart';
 
 import 'access_info.dart';
@@ -5,7 +6,7 @@ import 'sale_info.dart';
 import 'search_info.dart';
 import 'volume_info.dart';
 
-class BookModel extends Equatable {
+class BookModel extends BookEntity {
   final String? kind;
   final String? id;
   final String? etag;
