@@ -53,7 +53,8 @@ class HomeRepoImpl extends HomeRepo {
           ServerFailure.fromDioError(e),
         );
       }
-
+      
+      
       return left(
         ServerFailure(
           e.toString(),
