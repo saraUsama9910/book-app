@@ -24,10 +24,16 @@ class HomeRepoImpl extends HomeRepo {
       return right(books);
     } on Exception catch (e) {
       if (e is DioException) {
-  return left(
-    ServerFailure.fromDioError(),
-  );
-}
+        return left(
+          ServerFailure.fromDioError(e),
+        );
+      } else {
+        return left(
+          ServerFailure(
+            e.toString(),
+          ),
+        );
+      }
     }
   }
 
@@ -42,11 +48,9 @@ class HomeRepoImpl extends HomeRepo {
       books = await homeRepoDataSource.featchNewestBooks();
       return right(books);
     } on Exception catch (e) {
-    
-  return left(
-    ServerFailure(e.toString()),
-  );
-
+      return left(
+        ServerFailure(e.toString()),
+      );
     }
   }
 }

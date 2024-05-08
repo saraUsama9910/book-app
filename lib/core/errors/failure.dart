@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 
 abstract class Failure {
   final String message;
@@ -19,8 +20,8 @@ class ServerFailure extends Failure {
       case DioExceptionType.badCertificate:
         return ServerFailure('Bad Certificate ,Error with API');
       case DioExceptionType.badResponse:
-
-      
+        return ServerFailure.fromResponse(
+            e.response!.statusCode, e.response!.data);
       case DioExceptionType.cancel:
         return ServerFailure('Request to Api Server was Canceld');
       case DioExceptionType.connectionError:
@@ -30,4 +31,16 @@ class ServerFailure extends Failure {
     }
   }
   ServerFailure(super.message);
+  factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
+    if (statusCode == 404) {
+      return ServerFailure('Your Request was not found,Please Try Again Later');
+    } else if (statusCode == 500) {
+      return ServerFailure(
+          'There Was Problem With Server,Please Try Again Later');
+    } else if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
+      return ServerFailure(response['error']['message']);
+    } else {
+      return ServerFailure('Oops there was an error ,Please Try Again Later');
+    }
+  }
 }
