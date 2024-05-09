@@ -10,7 +10,6 @@ import 'package:book_app/core/utils/app_router.dart';
 import 'package:book_app/core/utils/fucnctions/setup_service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/adapters.dart';
 
@@ -24,7 +23,7 @@ void main() async {
   runApp(const BookApp());
 }
 
-final getIt = GetIt.instance;
+
 
 class BookApp extends StatelessWidget {
   const BookApp({super.key});
