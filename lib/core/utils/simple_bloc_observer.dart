@@ -1,3 +1,13 @@
+
+import 'dart:developer';
+
+import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SimpleBlocObserver extends BlocObserver{}
+class SimpleBlocObserver extends BlocObserver {
+  @override
+  void onChange(BlocBase bloc, Change change) {
+    log(change.toString());
+    super.onChange(bloc, change);
+  }
+}
