@@ -8,6 +8,7 @@ import 'package:book_app/Features/splash/peresntation/views/splash_view.dart';
 import 'package:book_app/constants.dart';
 import 'package:book_app/core/utils/app_router.dart';
 import 'package:book_app/core/utils/fucnctions/setup_service_locator.dart';
+import 'package:book_app/core/utils/simple_bloc_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -20,10 +21,9 @@ void main() async {
   setUpServiceLocator();
   await Hive.openBox<BookEntity>(kFeaturedBox);
   await Hive.openBox<BookEntity>(kNewestBox);
+  Bloc.observer = SimpleBlocObserver();
   runApp(const BookApp());
 }
-
-
 
 class BookApp extends StatelessWidget {
   const BookApp({super.key});
