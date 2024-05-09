@@ -25,5 +25,5 @@ class NewestBooksCubit extends Cubit<NewestBooksState> {
       );
     });
   }
-
+ 
 }
