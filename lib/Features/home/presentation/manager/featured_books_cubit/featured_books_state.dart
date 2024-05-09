@@ -17,4 +17,8 @@ final class FeaturedBooksFailure extends FeaturedBooksState {
   FeaturedBooksFailure(this.errMessage);
 }
 
-final class FeaturedBooksSuccess extends FeaturedBooksState {}
+final class FeaturedBooksSuccess extends FeaturedBooksState {
+  final List<BookEntity> books;
+
+  FeaturedBooksSuccess(this.books);
+}
