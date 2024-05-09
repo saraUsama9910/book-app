@@ -22,3 +22,5 @@ final class FeaturedBooksSuccess extends FeaturedBooksState {
 
   FeaturedBooksSuccess(this.books);
 }
+
+
